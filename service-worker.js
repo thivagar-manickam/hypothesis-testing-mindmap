@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/hypothesis-testing-mindmap/precache-manifest.e704310760a2b1d45774b1027086dcbd.js"
+  "/hypothesis-testing-mindmap/precache-manifest.b971d65ce6ad213001e77d6f69e9ada1.js"
 );
 
 self.addEventListener('message', (event) => {
