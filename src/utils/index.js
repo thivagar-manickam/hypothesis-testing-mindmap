@@ -9,9 +9,9 @@ export const downloadFile = (url, filename) => {
 
 export function generateSimpleModel() {
   return Model.create({
-    "rootTopicKey": "83dfa8ec-e56a-4b3a-a583-832497e10a20",
-    "editorRootTopicKey": "83dfa8ec-e56a-4b3a-a583-832497e10a20",
-    "focusKey": "ea454125-0bd9-48f2-8cb7-663f71d23280",
+    "rootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
+    "editorRootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
+    "focusKey": null,
     "extData": {
       "TOPIC_REFERENCE": {
         "reference": {}
@@ -19,106 +19,30 @@ export function generateSimpleModel() {
     },
     "topics": [
       {
-        "key": "83dfa8ec-e56a-4b3a-a583-832497e10a20",
+        "key": "a607e564-8513-4581-80a5-11153d20cd9b",
         "parentKey": null,
         "subKeys": [
-          "b7f00b7f-ee66-4b84-80f3-9f181d251fae"
+          "a3a6d196-3f5f-4753-8585-3d4045f36ff7"
         ],
         "collapse": false,
         "style": null,
         "blocks": [
           {
             "type": "CONTENT",
-            "data": "Python"
+            "data": "Hypothesis Testing"
           }
         ]
       },
       {
-        "key": "b7f00b7f-ee66-4b84-80f3-9f181d251fae",
-        "parentKey": "83dfa8ec-e56a-4b3a-a583-832497e10a20",
-        "subKeys": [
-          "0b62f75a-faac-4a9d-89d5-ed32144afee5",
-          "1c216a10-7c3d-44d7-ac8e-ed08629a4ef2"
-        ],
-        "collapse": false,
-        "style": null,
-        "blocks": [
-          {
-            "type": "CONTENT",
-            "data": "Data types"
-          }
-        ]
-      },
-      {
-        "key": "0b62f75a-faac-4a9d-89d5-ed32144afee5",
-        "parentKey": "b7f00b7f-ee66-4b84-80f3-9f181d251fae",
+        "key": "a3a6d196-3f5f-4753-8585-3d4045f36ff7",
+        "parentKey": "a607e564-8513-4581-80a5-11153d20cd9b",
         "subKeys": [],
         "collapse": false,
         "style": null,
         "blocks": [
           {
             "type": "CONTENT",
-            "data": "Text"
-          },
-          {
-            "type": "DESC",
-            "data": "Text data type refers to the string representation of data. \n\n A string can be defined using either the **' ' or \" \". **\n\n```python\nname = \"Thivagar\"\n\nname = 'Thivagar'\n\n```\n"
-          }
-        ]
-      },
-      {
-        "key": "1c216a10-7c3d-44d7-ac8e-ed08629a4ef2",
-        "parentKey": "b7f00b7f-ee66-4b84-80f3-9f181d251fae",
-        "subKeys": [
-          "6b5d993d-c379-4545-bb0c-fc481e757928",
-          "48882375-5cce-4d7e-aa54-1a437a4f5724",
-          "ea454125-0bd9-48f2-8cb7-663f71d23280"
-        ],
-        "collapse": false,
-        "style": null,
-        "blocks": [
-          {
-            "type": "CONTENT",
-            "data": "Number"
-          }
-        ]
-      },
-      {
-        "key": "6b5d993d-c379-4545-bb0c-fc481e757928",
-        "parentKey": "1c216a10-7c3d-44d7-ac8e-ed08629a4ef2",
-        "subKeys": [],
-        "collapse": false,
-        "style": null,
-        "blocks": [
-          {
-            "type": "CONTENT",
-            "data": "integer"
-          }
-        ]
-      },
-      {
-        "key": "48882375-5cce-4d7e-aa54-1a437a4f5724",
-        "parentKey": "1c216a10-7c3d-44d7-ac8e-ed08629a4ef2",
-        "subKeys": [],
-        "collapse": false,
-        "style": null,
-        "blocks": [
-          {
-            "type": "CONTENT",
-            "data": "float"
-          }
-        ]
-      },
-      {
-        "key": "ea454125-0bd9-48f2-8cb7-663f71d23280",
-        "parentKey": "1c216a10-7c3d-44d7-ac8e-ed08629a4ef2",
-        "subKeys": [],
-        "collapse": false,
-        "style": null,
-        "blocks": [
-          {
-            "type": "CONTENT",
-            "data": "complex"
+            "data": "Types"
           }
         ]
       }
@@ -135,8 +59,7 @@ export function generateSimpleModel() {
         "marginH": 60,
         "marginV": 20,
         "contentStyle": {
-          "lineHeight": "1.5",
-          "fontSize": "16px"
+          "lineHeight": "1.5"
         },
         "linkStyle": {
           "lineRadius": 5,
@@ -145,30 +68,45 @@ export function generateSimpleModel() {
         },
         "rootTopic": {
           "contentStyle": {
-            "fontSize": "36px"
+            "fontSize": "34px",
+            "borderRadius": "35px",
+            "padding": "16px 18px 16px 18px"
           },
           "subLinkStyle": {
             "lineType": "curve",
-            "lineWidth": "3px"
+            "lineWidth": "3px",
+            "lineColor": "rgb(113, 203, 45)"
           }
         },
         "primaryTopic": {
           "contentStyle": {
-            "fontSize": "24px"
+            "borderWidth": "1px",
+            "borderStyle": "solid",
+            "borderRadius": "20px",
+            "fontSize": "17px",
+            "padding": "10px 15px 10px 15px"
           },
           "subLinkStyle": {
             "lineType": "curve",
-            "lineWidth": "3px"
+            "lineWidth": "3px",
+            "lineColor": "rgb(113, 203, 45)"
           }
         },
         "normalTopic": {
+          "contentStyle": {
+            "border": "1px solid #e8eaec",
+            "borderRadius": "20px",
+            "fontSize": "17px",
+            "padding": "4px 10px"
+          },
           "subLinkStyle": {
             "lineType": "curve",
-            "lineWidth": "3px"
+            "lineWidth": "3px",
+            "lineColor": "white"
           }
         }
       }
     },
-    "formatVersion": "0.0"
+    "formatVersion": null
   });
 }
