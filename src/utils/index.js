@@ -11,7 +11,7 @@ export function generateSimpleModel() {
   return Model.create({
     "rootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
     "editorRootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
-    "focusKey": null,
+    "focusKey": "a3a6d196-3f5f-4753-8585-3d4045f36ff7",
     "extData": {
       "TOPIC_REFERENCE": {
         "reference": {}
@@ -42,7 +42,7 @@ export function generateSimpleModel() {
         "blocks": [
           {
             "type": "CONTENT",
-            "data": "Types"
+            "data": "Purpose"
           }
         ]
       }
@@ -107,6 +107,6 @@ export function generateSimpleModel() {
         }
       }
     },
-    "formatVersion": null
+    "formatVersion": "0.0"
   });
 }
