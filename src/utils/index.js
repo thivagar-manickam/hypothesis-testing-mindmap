@@ -11,7 +11,7 @@ export function generateSimpleModel() {
   return Model.create({
     "rootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
     "editorRootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
-    "focusKey": "5a04c9b0-6d2b-4c6b-830f-a4a370ea88b9",
+    "focusKey": "7a595fd7-0c49-45a0-b631-165395cdf614",
     "extData": {
       "TOPIC_REFERENCE": {
         "reference": {}
@@ -28,6 +28,10 @@ export function generateSimpleModel() {
           {
             "type": "CONTENT",
             "data": "Assumptions"
+          },
+          {
+            "type": "DESC",
+            "data": "Since **2 Sample t\\-test** is a parametric test, it will have to satisfy the Normality and Variance assumptions in\n order to perform the test.\n\n##  Normality Assumption:\n\n The normality assumption states that the numerical feature involved in the hypothesis is normally distributed.\n To test this assumption we can use the Shapiro test method from the scipy stats module.\n```python\nfrom scipy import stats\n\n# Here numerical data is a dataFrame of the numerical\n# feature involved in the hypothesis. Replace with \n# your own dataFrame\np_value = stats.shapiro(group1_data)[1]\nif p > 0.05:\n    print(p, \"Data can be normally distributed\")\nelse:\n    print(p, \"Data is not normally distributed\")\n\n```\n\n##  Variance Assumption:\n\n  The Variance assumption states that the varaince amoung the different groups involved in the \n  hypothesis is same.\n  To test this assumption we can use the Levene test method from the Scipy stats module.\n```python\nfrom scipy import stats\n\n# Here numerical data is a dataFrame of the numerical\n# feature involved in the hypothesis. Replace with \n# your own dataFrame\np_value = stats.levene(group1_data, group2_data, ..., groupN_data)[1]\nif p > 0.05:\n    print(p_value, \"Variance can be same\")\nelse:\n    print(p_value, \"Variance cannot be same\")\n\n```\n"
           }
         ]
       },
@@ -121,6 +125,23 @@ export function generateSimpleModel() {
         ]
       },
       {
+        "key": "9ba129e7-4aa1-4cdc-9471-4bd331d94b84",
+        "parentKey": "61d82248-611b-4f06-824c-6589d605dd9e",
+        "subKeys": [],
+        "collapse": false,
+        "style": null,
+        "blocks": [
+          {
+            "type": "CONTENT",
+            "data": "Assumptions"
+          },
+          {
+            "type": "DESC",
+            "data": "Since ANOVA is a parametric test, it will have to satisfy the Normality and Variance assumptions in\n order to perform the test.\n\n##  Normality Assumption:\n\n The normality assumption states that the numerical feature involved in the hypothesis is normally distributed.\n To test this assumption we can use the Shapiro test method from the scipy stats module.\n```python\nfrom scipy import stats\n\n# Here numerical data is a dataFrame of the numerical\n# feature involved in the hypothesis. Replace with \n# your own dataFrame\np_value = stats.shapiro(numerical_data)[1]\nif p > 0.05:\n    print(p, \"Data can be normally distributed\")\nelse:\n    print(p, \"Data is not normally distributed\")\n\n```\n\n##  Variance Assumption:\n\n  The Variance assumption states that the varaince amoung the different groups involved in the \n  hypothesis is same.\n  To test this assumption we can use the Levene test method from the Scipy stats module.\n```python\nfrom scipy import stats\n\n# Here numerical data is a dataFrame of the numerical\n# feature involved in the hypothesis. Replace with \n# your own dataFrame\np_value = stats.levene(group1_data, group2_data, ..., groupN_data)[1]\nif p > 0.05:\n    print(p_value, \"Variance can be same\")\nelse:\n    print(p_value, \"Variance cannot be same\")\n\n```\n"
+          }
+        ]
+      },
+      {
         "key": "50f23764-5ff5-445e-b448-11f8277696c7",
         "parentKey": "bc7cf847-d335-49bd-9c86-9b16a148ddb4",
         "subKeys": [],
@@ -130,6 +151,23 @@ export function generateSimpleModel() {
           {
             "type": "CONTENT",
             "data": "Chi-Square Contigency"
+          }
+        ]
+      },
+      {
+        "key": "7a595fd7-0c49-45a0-b631-165395cdf614",
+        "parentKey": "0c3353c8-4e57-4425-968f-5a5b78c847fe",
+        "subKeys": [],
+        "collapse": false,
+        "style": null,
+        "blocks": [
+          {
+            "type": "CONTENT",
+            "data": "Post HOC Analysis"
+          },
+          {
+            "type": "DESC",
+            "data": "The ANOVA test function, will let us know if there is a difference in the mean between the groups,\n but will not say which groups differ from each other.\n In order to know which are the groups that differ from others we will have to perform the\n Post HOC analysis on the data to know about it.\n\n##  Post HOC Analysis for ANOVA:\n\n  We can use the MultiComparison function from the Statsmodels.stats module to perform the Post HOC\n Analysis\n The MulitComparison function takes two main params:\n data = we will have to pass the numerical feature ndarray used in the hypothesis\n group = we will have to pass the categorical feature ndarray used in the hypothesis\n\n```python\nfrom statsmodels.stats.multicomp import MultiComparison\n\nmc = MultiComparison(data=num_feature, groups=cat_feature, group_order=None)\n\nprint(mc.tukeyhsd(0.05))\n\n```\n Tukey's range test to compares means of all pairs of groups and list out the groups which are\n different from each other.\n tukeyhsd function will return a TukeyHSDResults instance which includes meandiff, p\\-adj, lower,\n upper and reject columns.\n\n True in the reject column mean that we can reject the null hypothesis, which in turn refers to \n that there is a difference in the mean value between the two groups.\n \n False is the reject column mean that we fail to reject the null hypothesis and the two groups tend\n to have the same mean value"
           }
         ]
       },
@@ -153,9 +191,9 @@ export function generateSimpleModel() {
         "key": "5a04c9b0-6d2b-4c6b-830f-a4a370ea88b9",
         "parentKey": "81626f6c-5f13-4d7b-8077-cda871732628",
         "subKeys": [
+          "3ca143d4-b91e-4d61-9ebb-6cf0f967bf6f",
           "1459bf1d-2a6e-44ff-a486-950f36a902fd",
-          "14213589-8fe9-4e25-b7ff-2305e9a93318",
-          "3ca143d4-b91e-4d61-9ebb-6cf0f967bf6f"
+          "14213589-8fe9-4e25-b7ff-2305e9a93318"
         ],
         "collapse": false,
         "style": null,
@@ -166,7 +204,7 @@ export function generateSimpleModel() {
           },
           {
             "type": "DESC",
-            "data": "##  2 Sample t\\-test\n\n  **2 Sample t\\-test** is performed when there is one numerical feature and one categorical feature is involved in the \n  hypothesis provided the categorical feature has only two levels/groups.\n\n> Examples:\n> \n>    1. Verify that there is no discrimination in wages \\(numerical feature\\) provided by a company based on gender \\(categorical\\)\n>    1. Validate if the gender \\(categorical\\) has any effect in the weight \\(numerical\\) loss program\n\n  In the above examples, the categorical feature gender has only two levels namely Male and Female. When we want to \n  see if there is a pattern in the numerical feature based on the categorical feature we will use 2 Sample t\\-test\n\n> 2 Sample t\\-test, performs the hypothesis by checking if the numerical feature mean of the two different levels \n> are same or different.\n"
+            "data": "## 2 Sample t\\-test\n\n  **2 Sample t\\-test** is performed when there is one numerical feature and one categorical feature is involved in the hypothesis provided the categorical feature has only two levels/groups.\n\n  2 Sample t\\-test is a parametric test and will have to satisfy the Normality and Variance assumptions.\n\n> Examples:\n> \n> \n>    1. Verify that there is no discrimination in wages \\(numerical feature\\) provided by a company based on gender \\(categorical\\)\n>    1. Validate if the gender \\(categorical\\) has any effect in the weight \\(numerical\\) loss program\n\n  In the above examples, the categorical feature gender has only two levels namely Male and Female. \n  When we want to  see if there is a pattern in the numerical feature based on the categorical feature\n  we will use 2 Sample t\\-test\n\n> 2 Sample t\\-test, performs the hypothesis by checking if the numerical feature mean \n> of the two different levels are same or different.\n"
           }
         ]
       },
@@ -193,6 +231,23 @@ export function generateSimpleModel() {
           {
             "type": "CONTENT",
             "data": "1 Sample Proportion test"
+          }
+        ]
+      },
+      {
+        "key": "dbf17b96-10b9-4254-9641-2a186646c719",
+        "parentKey": "61d82248-611b-4f06-824c-6589d605dd9e",
+        "subKeys": [],
+        "collapse": false,
+        "style": null,
+        "blocks": [
+          {
+            "type": "CONTENT",
+            "data": "Non Parametric Test"
+          },
+          {
+            "type": "DESC",
+            "data": "## Non \\- Parametric Test for ANOVA:\n\n We cannot perform the ANOVA test, when the data does not satisfy the Normality and the Equal Variance amoung the \n group test. In this case we will be going with a Non \\- Parametric test.\n \n A Kruskal\\-Wallis test is used to determine whether or not there is a statistically significant difference between \n the medians of three or more independent groups. This test is the nonparametric equivalent of the one\\-way ANOVA \n and is typically used when the normality assumption is violated.\n\nThe Kruskal\\-Wallis test does not assume normality in the data and is much less sensitive to outliers than the one\\-way ANOVA.\n** **\n** **The Kruskal test compares the Median value amoung the groups, instead of considering their\n mean value. \n> Hypothesis Statements:\n> H0:= The median value accross the different groups are same\n> Ha:= Atleast one of the median value is different from other groups\n\n## Kruskal \\- Wallis Test Assumptions:\n\n Before we can conduct a Kruskal \\- Wallis test, we need to make sure the \n following assumptions are met:\n> \n>    1. Ordinal or Continuos Response Variable \\- The numerical feature involved in the hypothesis should \n>     be a Ordinal or Continuous variable. Eg: The time taken to deliver package in different region. Here the time\n>     taken is a continuous variable.\n> 2\\. Independence \\- The observations in each group need to be independent of each other.\n> 3\\. Distribution have similar shapes \\- The distibution in each group need to have the same shape\n\n## Kruskal \\- Wallis Test code:\n\n```python\nfrom scipy import stats\n\n# We will need to pass all the individual group dataframes\np_value = stats.kruskal(sample1, sample2,...,sampleN, nan_policy='propogate')[1]\nif p_value > 0.05\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n\nWe will have to perform Post HOC analysis to figure out which groups differ from each other."
           }
         ]
       },
@@ -243,13 +298,21 @@ export function generateSimpleModel() {
       {
         "key": "61d82248-611b-4f06-824c-6589d605dd9e",
         "parentKey": "81626f6c-5f13-4d7b-8077-cda871732628",
-        "subKeys": [],
+        "subKeys": [
+          "9ba129e7-4aa1-4cdc-9471-4bd331d94b84",
+          "0c3353c8-4e57-4425-968f-5a5b78c847fe",
+          "dbf17b96-10b9-4254-9641-2a186646c719"
+        ],
         "collapse": false,
         "style": null,
         "blocks": [
           {
             "type": "CONTENT",
             "data": "Analysis of Variance (ANOVA)"
+          },
+          {
+            "type": "DESC",
+            "data": "##  Analysis of Variance \\(ANOVA\\):\n\n ANOVA statistical test is performed when there is one numerical feature and one categorical feature\n involved in the hypothesis, where there are more than 2 levels in the categorical variable.\n\n Similar to 2 Sample t\\-test, ANOVA is also a parametric test and will have to satisfy the\n Normality and Variance assumptions as well.\n ANOVA statistical test is performed to test if the mean accross all the levels are same or not.\n\n> Example:\n> \n>    1. Verify if the the time take\\(numerical\\) to deliver the package accross different region is same, where the regions are\n>     A, B, C \\(categorical\\)\n\n\n###  ANOVA Hypothesis statments:\n\n Below is the Alternative and Null hypothesis for the above example:\n> Ha:= The time taken to deliver the package across all the three regions are not same\n> H0:= The time taken to deliver the package across all the three regions are same\n"
           }
         ]
       },
@@ -314,6 +377,25 @@ export function generateSimpleModel() {
           {
             "type": "CONTENT",
             "data": "Independent t-test"
+          }
+        ]
+      },
+      {
+        "key": "0c3353c8-4e57-4425-968f-5a5b78c847fe",
+        "parentKey": "61d82248-611b-4f06-824c-6589d605dd9e",
+        "subKeys": [
+          "7a595fd7-0c49-45a0-b631-165395cdf614"
+        ],
+        "collapse": false,
+        "style": null,
+        "blocks": [
+          {
+            "type": "CONTENT",
+            "data": "ANOVA Testing methods"
+          },
+          {
+            "type": "DESC",
+            "data": "There are two possible ways in which we can perform the ANOVA testing.\n\n## Statistical Approach:\n\n We can use the f\\_oneway function from the Scipy stats module to perform the ANOVA testing.\n\n The one\\-way ANOVA tests the null hypothesis that two or more groups have\n the same population mean.  The test is applied to samples from two or \n more groups, possibly with differing sizes.\n\n The ideal scenario to use the f\\_oneway is when we have only a single categorical feature\n used in the Hypothesis\n```python\nfrom scipy import stats\n\np_value = stats.f_oneway(sample1, sample2, ... ,sampleN, axis = 0)\nif p_value > 0.05:\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n\n## Regression model Approach:\n\n The second way is that we can use the \"ols\" and \"anova\\_lm\" models for ANOVA testing.\n This approach can be used when there are more number of groups to be compared or\n when we want to compare the mean accross two categorical features.\n```python\nfrom statsmodels.formula.api import ols\nfrom statsmodels.stats.anova import anova_lm\n\n# Here Minutes is the\nan = ols('Minutes~Region', data=df).fit()\nanova_lm(an)\n\n```\n The anova\\_lm will give a table output with the F \\- Statistics and P\\_value for the data. Based on the\n P\\_value we can decide either we can reject the null hypothesis or we fail to reject the null hypothesis"
           }
         ]
       }
