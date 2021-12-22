@@ -11,13 +11,26 @@ export function generateSimpleModel() {
   return Model.create({
     "rootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
     "editorRootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
-    "focusKey": "064b8bea-d69a-4785-998b-1a390e3ba873",
+    "focusKey": "5a04c9b0-6d2b-4c6b-830f-a4a370ea88b9",
     "extData": {
       "TOPIC_REFERENCE": {
         "reference": {}
       }
     },
     "topics": [
+      {
+        "key": "3ca143d4-b91e-4d61-9ebb-6cf0f967bf6f",
+        "parentKey": "5a04c9b0-6d2b-4c6b-830f-a4a370ea88b9",
+        "subKeys": [],
+        "collapse": false,
+        "style": null,
+        "blocks": [
+          {
+            "type": "CONTENT",
+            "data": "Assumptions"
+          }
+        ]
+      },
       {
         "key": "c8b409a4-cbf5-4671-96f8-eb4fc3f773d9",
         "parentKey": "81626f6c-5f13-4d7b-8077-cda871732628",
@@ -31,6 +44,10 @@ export function generateSimpleModel() {
           {
             "type": "CONTENT",
             "data": "1 - Sample t-test"
+          },
+          {
+            "type": "DESC",
+            "data": "##  1 Sample t\\-test:\n\n The 1 Sample t\\-test is perfomed when we want to verify any claim made by the company / organisations.\n  \n Whenever only a single numerical feature is involved in the hypothesis we will go with 1 Sample t\\-test.\n\n```none\nExample:\n\n1. A company claims that their medicine cures headached is less than 12 minutes.\n2. A food delivery company claims that all their delivery is done withing 30 minutes\n   of ordering\n3. A battery manufacturer company claims that the average life time for their \n   batteries are 40 hours.\n\n```\n\n In all the above cases we will be using the **1 Sample t\\-test to statistically validated** if the claims made by the\n company / organisations is valid or not"
           }
         ]
       },
@@ -66,6 +83,10 @@ export function generateSimpleModel() {
           {
             "type": "CONTENT",
             "data": "Test of Proportions"
+          },
+          {
+            "type": "DESC",
+            "data": "Test of Proportions is used whenever there is a **categorical feature** and **no numerical feature** involved in\n the hypothesis creation \n\n The Test of Proportions is used when we want to verify if the mean of the groups in a feature is same or different\n\n There are 4 tests associated with Test of Proportions:\n1. One Sample proportion test\n1. Two Sample proportion test\n1. Chi\\-Square test\n1. Chi\\-Square Contigency test\n\n"
           }
         ]
       },
@@ -133,7 +154,8 @@ export function generateSimpleModel() {
         "parentKey": "81626f6c-5f13-4d7b-8077-cda871732628",
         "subKeys": [
           "1459bf1d-2a6e-44ff-a486-950f36a902fd",
-          "14213589-8fe9-4e25-b7ff-2305e9a93318"
+          "14213589-8fe9-4e25-b7ff-2305e9a93318",
+          "3ca143d4-b91e-4d61-9ebb-6cf0f967bf6f"
         ],
         "collapse": false,
         "style": null,
@@ -141,6 +163,10 @@ export function generateSimpleModel() {
           {
             "type": "CONTENT",
             "data": "2 - Sample t-test"
+          },
+          {
+            "type": "DESC",
+            "data": "##  2 Sample t\\-test\n\n  **2 Sample t\\-test** is performed when there is one numerical feature and one categorical feature is involved in the \n  hypothesis provided the categorical feature has only two levels/groups.\n\n> Examples:\n> \n>    1. Verify that there is no discrimination in wages \\(numerical feature\\) provided by a company based on gender \\(categorical\\)\n>    1. Validate if the gender \\(categorical\\) has any effect in the weight \\(numerical\\) loss program\n\n  In the above examples, the categorical feature gender has only two levels namely Male and Female. When we want to \n  see if there is a pattern in the numerical feature based on the categorical feature we will use 2 Sample t\\-test\n\n> 2 Sample t\\-test, performs the hypothesis by checking if the numerical feature mean of the two different levels \n> are same or different.\n"
           }
         ]
       },
@@ -241,6 +267,10 @@ export function generateSimpleModel() {
           {
             "type": "CONTENT",
             "data": "Test of Mean"
+          },
+          {
+            "type": "DESC",
+            "data": "Test of Means methods are used whenever a numerical category is involved to make the null hypothesis.\n\n The methods available in the Test of Means performs the testing based on 2 scenarios:\n1. We want to see if the single feature numerical mean differs from the population mean\n1. We want to see if the mean value of two or more groups in a feature are same or different\n\n\n There are 3 methods associated with Test of Means:\n1. One sample t\\-test\n1. Two sample t\\-test\n1. Analysis of Variance \\(ANOVA\\)\n\n"
           }
         ]
       },
