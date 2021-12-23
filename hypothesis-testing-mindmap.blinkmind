@@ -1,13 +1,26 @@
 {
   "rootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
   "editorRootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
-  "focusKey": "7a595fd7-0c49-45a0-b631-165395cdf614",
+  "focusKey": "1ae639a4-76e8-42e2-ac9f-0dc83446a970",
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {}
     }
   },
   "topics": [
+    {
+      "key": "1ae639a4-76e8-42e2-ac9f-0dc83446a970",
+      "parentKey": "5a04c9b0-6d2b-4c6b-830f-a4a370ea88b9",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Non Parametric Test"
+        }
+      ]
+    },
     {
       "key": "3ca143d4-b91e-4d61-9ebb-6cf0f967bf6f",
       "parentKey": "5a04c9b0-6d2b-4c6b-830f-a4a370ea88b9",
@@ -21,7 +34,7 @@
         },
         {
           "type": "DESC",
-          "data": "Since **2 Sample t\\-test** is a parametric test, it will have to satisfy the Normality and Variance assumptions in\n order to perform the test.\n\n##  Normality Assumption:\n\n The normality assumption states that the numerical feature involved in the hypothesis is normally distributed.\n To test this assumption we can use the Shapiro test method from the scipy stats module.\n```python\nfrom scipy import stats\n\n# Here numerical data is a dataFrame of the numerical\n# feature involved in the hypothesis. Replace with \n# your own dataFrame\np_value = stats.shapiro(group1_data)[1]\nif p > 0.05:\n    print(p, \"Data can be normally distributed\")\nelse:\n    print(p, \"Data is not normally distributed\")\n\n```\n\n##  Variance Assumption:\n\n  The Variance assumption states that the varaince amoung the different groups involved in the \n  hypothesis is same.\n  To test this assumption we can use the Levene test method from the Scipy stats module.\n```python\nfrom scipy import stats\n\n# Here numerical data is a dataFrame of the numerical\n# feature involved in the hypothesis. Replace with \n# your own dataFrame\np_value = stats.levene(group1_data, group2_data, ..., groupN_data)[1]\nif p > 0.05:\n    print(p_value, \"Variance can be same\")\nelse:\n    print(p_value, \"Variance cannot be same\")\n\n```\n"
+          "data": "Since **2 Sample t\\-test** is a parametric test, it will have to satisfy the Normality and Variance assumptions in\n order to perform the test.\n\n## Normality Assumption:\n\n The normality assumption states that the numerical feature involved in the hypothesis is normally distributed.\n To test this assumption we can use the Shapiro test method from the scipy stats module.\n```python\nfrom scipy import stats\n\n# Here numerical data is a dataFrame of the numerical\n# feature involved in the hypothesis. Replace with \n# your own dataFrame\np_value = stats.shapiro(group1_data)[1]\nif p > 0.05:\n    print(p, \"Data can be normally distributed\")\nelse:\n    print(p, \"Data is not normally distributed\")\n\n```\n\n## Variance Assumption:\n\n  The Variance assumption states that the varaince amoung the different groups involved in the \n  hypothesis is same.\n  To test this assumption we can use the Levene test method from the Scipy stats module.\n```python\nfrom scipy import stats\n\n# Here numerical data is a dataFrame of the numerical\n# feature involved in the hypothesis. Replace with \n# your own dataFrame\np_value = stats.levene(group1_data, group2_data, ..., groupN_data)[1]\nif p > 0.05:\n    print(p_value, \"Variance can be same\")\nelse:\n    print(p_value, \"Variance cannot be same\")\n\n```\n"
         }
       ]
     },
@@ -93,7 +106,11 @@
       "blocks": [
         {
           "type": "CONTENT",
-          "data": "1 tail test"
+          "data": " 1 tail test"
+        },
+        {
+          "type": "DESC",
+          "data": "##  One Tail 1 \\- Sample t\\-test:\n\n The one tail t\\-test is used whenever the Alternative hypothesis value lies in either side\n of the tail and not on both the sides.\n\n> Example:\n> A drug manufactuering company claims that their drug on an average takes less than 12 minutes\n> to cure headache. Verify that the company's claim is valid\n> Ha:= Average time taken to cure is less than 12 minutes \\(< 12 minutes\\) \\-\\> Alternative hypotheis\n> H0:= Average time taken to cure is greater than or equal to 12 minutes \\(\\>= 12 minutes\\) \\- Null hypothesis\n Here we are checking if the average time taken is greater than 12 and we want to see if the value lies\n on the right had tail alone. \n\n## Python function to perform One tail 1 Sample t\\-test:\n\n Below is the code snippet used to perform One tail 1 Sample t\\-test for the above example. We will be using\n the **ttest\\_1samp **from Scipy stats package.\n```python\nfrom scipy.stats import ttest_1samp\n\np_value = ttest_1samp(a=sample_data, popmean=12, alternative='two-sided')[1]\n\nif (p_value/2) > 0.05:\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n\n The ttest\\_1samp by default will give the p\\_value for the two\\-tail test. So when performing one tail t\\-test,\n we either have to divide the p\\_value by 2 before coming to a conclusion or in the latest python version\n we can specify 'greater' or 'less' in the alternative param. In that case we need not divide by 2."
         }
       ]
     },
@@ -183,7 +200,8 @@
       "subKeys": [
         "3ca143d4-b91e-4d61-9ebb-6cf0f967bf6f",
         "1459bf1d-2a6e-44ff-a486-950f36a902fd",
-        "14213589-8fe9-4e25-b7ff-2305e9a93318"
+        "14213589-8fe9-4e25-b7ff-2305e9a93318",
+        "1ae639a4-76e8-42e2-ac9f-0dc83446a970"
       ],
       "collapse": false,
       "style": null,
@@ -264,6 +282,10 @@
         {
           "type": "CONTENT",
           "data": "2 tail test"
+        },
+        {
+          "type": "DESC",
+          "data": "##  Two Tail 1 \\- Sample t\\-test:\n\n The two tail t\\-test is used whenever the Alternative hypothesis value can lie on either side of\n the tail and does not necessarily be concentrated only on one side\n\n> Example:\n> A soda company wants to analyse if their can filling machine fills the can with exactly 150ml of content and not more or less than it. \n> Ha:= Average content filled in the can is not equal to 150ml \\(\\!= 150 ml\\)\\-\\> Alternative hypotheis\n> H0:= Average content filled in the can is equal to 150ml \\(= 150 ml\\) \\-\\> Null hypothesis\n Here we are checking if the machine fills the can exactly with 150 ml of content. There is a possibility\n that the machine can fill the can with more than 150ml content or less than 150ml of content.\n Here the alternative hypothesis range lies on both the tails and we will have to use\n Two tail 1\\-Sample t\\-test\n\n##  Python function to perform two tail 1 Sample t\\-test:\n\n Below is the code snippet used to perform two sample 1 Sample t\\-test for the above example. \n We will be using the **ttest\\_1samp **from Scipy stats package.\n```python\nfrom scipy.stats import ttest_1samp\n\np_value = ttest_1samp(a=sample_data, popmean=12, alternative='two-sided')[1]\n\nif p_value > 0.05:\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n \n Since by default the ttest\\_1samp gives the p\\_value for two\\-sided, we can directly infer the hypothesis\n based on the p\\_value."
         }
       ]
     },
@@ -385,7 +407,7 @@
         },
         {
           "type": "DESC",
-          "data": "There are two possible ways in which we can perform the ANOVA testing.\n\n## Statistical Approach:\n\n We can use the f\\_oneway function from the Scipy stats module to perform the ANOVA testing.\n\n The one\\-way ANOVA tests the null hypothesis that two or more groups have\n the same population mean.  The test is applied to samples from two or \n more groups, possibly with differing sizes.\n\n The ideal scenario to use the f\\_oneway is when we have only a single categorical feature\n used in the Hypothesis\n```python\nfrom scipy import stats\n\np_value = stats.f_oneway(sample1, sample2, ... ,sampleN, axis = 0)\nif p_value > 0.05:\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n\n## Regression model Approach:\n\n The second way is that we can use the \"ols\" and \"anova\\_lm\" models for ANOVA testing.\n This approach can be used when there are more number of groups to be compared or\n when we want to compare the mean accross two categorical features.\n```python\nfrom statsmodels.formula.api import ols\nfrom statsmodels.stats.anova import anova_lm\n\n# Here Minutes is the\nan = ols('Minutes~Region', data=df).fit()\nanova_lm(an)\n\n```\n The anova\\_lm will give a table output with the F \\- Statistics and P\\_value for the data. Based on the\n P\\_value we can decide either we can reject the null hypothesis or we fail to reject the null hypothesis"
+          "data": "There are two possible ways in which we can perform the ANOVA testing.\n\n## Statistical Approach:\n\n We can use the f\\_oneway function from the Scipy stats module to perform the ANOVA testing.\n\n The one\\-way ANOVA tests the null hypothesis that two or more groups have\n the same population mean.  The test is applied to samples from two or \n more groups, possibly with differing sizes.\n\n The ideal scenario to use the f\\_oneway is when we have only a single categorical feature\n used in the Hypothesis\n```python\nfrom scipy import stats\n\np_value = stats.f_oneway(sample1, sample2, ... ,sampleN, axis = 0)\nif p_value > 0.05:\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n\n## Regression model Approach:\n\n The second way is that we can use the \"ols\" and \"anova\\_lm\" models for ANOVA testing.\n This approach can be used when there are more number of groups to be compared or\n when we want to compare the mean accross two categorical features.\n```python\nfrom statsmodels.formula.api import ols\nfrom statsmodels.stats.anova import anova_lm\n\n# Here Minutes is the numerical feature and \n# Region is the categorical feature\nan = ols('Minutes~Region', data=df).fit()\nanova_lm(an)\n\n```\n The anova\\_lm will give a table output with the F \\- Statistics and P\\_value for the data. Based on the\n P\\_value we can decide either we can reject the null hypothesis or we fail to reject the null hypothesis"
         }
       ]
     }
