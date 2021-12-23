@@ -11,13 +11,20 @@
     {
       "key": "1ae639a4-76e8-42e2-ac9f-0dc83446a970",
       "parentKey": "5a04c9b0-6d2b-4c6b-830f-a4a370ea88b9",
-      "subKeys": [],
+      "subKeys": [
+        "79e51c15-351e-4531-a722-194fab9dfc8b",
+        "8fb7e16a-9930-4f62-af35-2190251832a8"
+      ],
       "collapse": false,
       "style": null,
       "blocks": [
         {
           "type": "CONTENT",
           "data": "Non Parametric Test"
+        },
+        {
+          "type": "DESC",
+          "data": "2 \\- Sample t\\-test are paramteric test. They will have to satisfy the Normality and the Variance\n assumptions, in order for the test to be performed.\n\n If the Normality or the Variance test fails we can use non\\-parametric alternatives to conduct the\n statistical test.\n\n There are two non\\-parametric alternative test for 2\\-Sample t\\-test:\n> MannWhitenyu test \\- The non\\-parametric alternative for Independent 2\\-Sample t\\-test\n> Wilcoxon test \\- The non\\-parametric alternative for dependent 2\\-Sample test\n"
         }
       ]
     },
@@ -115,6 +122,22 @@
       ]
     },
     {
+      "key": "b222b8f4-ecba-46fa-91fc-1223a04160fe",
+      "parentKey": "5a04c9b0-6d2b-4c6b-830f-a4a370ea88b9",
+      "subKeys": [
+        "14213589-8fe9-4e25-b7ff-2305e9a93318",
+        "1459bf1d-2a6e-44ff-a486-950f36a902fd"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Parametric Test"
+        }
+      ]
+    },
+    {
       "key": "eb2cbc73-61df-498d-b5a0-fc22981eafa7",
       "parentKey": "a607e564-8513-4581-80a5-11153d20cd9b",
       "subKeys": [],
@@ -128,6 +151,23 @@
         {
           "type": "DESC",
           "data": "## Definition:\n\n**Hypothesis testing** is an act in statistics whereby an analyst tests an assumption regarding a population parameter. The methodology employed by the analyst depends on the nature of the data used and the reason for the analysis.\n\nHypothesis testing is used to assess the plausibility of a hypothesis by using sample data. Such data may come from a larger population, or from a data\\-generating process. The word \"population\" will be used for both of these cases in the following descriptions."
+        }
+      ]
+    },
+    {
+      "key": "79e51c15-351e-4531-a722-194fab9dfc8b",
+      "parentKey": "1ae639a4-76e8-42e2-ac9f-0dc83446a970",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "MannWhitenyu Test"
+        },
+        {
+          "type": "DESC",
+          "data": "When the Independent t\\-test fails to satisfy the assumption, we will use the MannWhitneyu test from\n the Scipy.stats package.\n\n## MannWhitneyu Test Assumptions:\n\n Before we can conduct a MannWhitneyu test, we need to make sure the \n following assumptions are satisfied:\n> \n>    1. Ordinal or Continuos Response Variable \\- The numerical feature involved in the hypothesis should \n>     be a Ordinal or Continuous variable. Eg: The time taken to deliver package in different region. \n>     Here the time taken is a continuous variable.\n> 2\\. Independence \\- The observations in each group need to be independent of each other.\n> 3\\. Distribution have similar shapes \\- The distibution in each group need to have the same shape\n>  Code snippet for MannWhitneyu test:\n\n##  MannWhitneyu Hypothesis:\n\n In most cases, a Mann\\-Whitney U test is performed as a two\\-sided test. \n The null and alternative hypotheses  are written as:\n H0:= The two populations are equal\n Ha:= The two populations are not equal\n\n> Example:\n> A professor teaches batch1 students using a specific method and collects the test scores of the batch.\n> Then he changes the teaching method for batch2 students and collects the test score of the new batch.\n> Now the professor wants to check if the new teaching method was effective.\n> Ha:= Test scores of batch2 is not equal to the test scores of batch1 \\-\\> Alternative hypothesis\n> H0:= Test scores of batch2 is equal to the test scores of batch1 \\-\\> Null hypothesis\n\n **Code snippet for the above example:**\n```python\nfrom scipy.stats import mannwhitneyu\n\np_value = mannwhitneyu(x=sample1data,y=sample2data,alternative=None)\nif p_value > 0.05:\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n"
         }
       ]
     },
@@ -199,8 +239,7 @@
       "parentKey": "81626f6c-5f13-4d7b-8077-cda871732628",
       "subKeys": [
         "3ca143d4-b91e-4d61-9ebb-6cf0f967bf6f",
-        "1459bf1d-2a6e-44ff-a486-950f36a902fd",
-        "14213589-8fe9-4e25-b7ff-2305e9a93318",
+        "b222b8f4-ecba-46fa-91fc-1223a04160fe",
         "1ae639a4-76e8-42e2-ac9f-0dc83446a970"
       ],
       "collapse": false,
@@ -212,7 +251,7 @@
         },
         {
           "type": "DESC",
-          "data": "## 2 Sample t\\-test\n\n  **2 Sample t\\-test** is performed when there is one numerical feature and one categorical feature is involved in the hypothesis provided the categorical feature has only two levels/groups.\n\n  2 Sample t\\-test is a parametric test and will have to satisfy the Normality and Variance assumptions.\n\n> Examples:\n> \n> \n>    1. Verify that there is no discrimination in wages \\(numerical feature\\) provided by a company based on gender \\(categorical\\)\n>    1. Validate if the gender \\(categorical\\) has any effect in the weight \\(numerical\\) loss program\n\n  In the above examples, the categorical feature gender has only two levels namely Male and Female. \n  When we want to  see if there is a pattern in the numerical feature based on the categorical feature\n  we will use 2 Sample t\\-test\n\n> 2 Sample t\\-test, performs the hypothesis by checking if the numerical feature mean \n> of the two different levels are same or different.\n"
+          "data": "## 2 Sample t\\-test\n\n  **2 Sample t\\-test** is performed when there is one numerical feature and one categorical feature is involved in the hypothesis provided the categorical feature has only two levels/groups.\n\n  2 Sample t\\-test is a parametric test and will have to satisfy the Normality and Variance assumptions.\n\n> Examples:\n> \n>    1. Verify that there is no discrimination in wages \\(numerical feature\\) provided by a company based on gender \\(categorical\\)\n>    1. Validate if the gender \\(categorical\\) has any effect in the weight \\(numerical\\) loss program\n\n  In the above examples, the categorical feature gender has only two levels namely Male and Female. \n  When we want to  see if there is a pattern in the numerical feature based on the categorical feature\n  we will use 2 Sample t\\-test\n\n> 2 Sample t\\-test, performs the hypothesis by checking if the numerical feature mean \n> of the two different levels are same or different.\n"
         }
       ]
     },
@@ -255,7 +294,7 @@
         },
         {
           "type": "DESC",
-          "data": "## Non \\- Parametric Test for ANOVA:\n\n We cannot perform the ANOVA test, when the data does not satisfy the Normality and the Equal Variance amoung the \n group test. In this case we will be going with a Non \\- Parametric test.\n \n A Kruskal\\-Wallis test is used to determine whether or not there is a statistically significant difference between \n the medians of three or more independent groups. This test is the nonparametric equivalent of the one\\-way ANOVA \n and is typically used when the normality assumption is violated.\n\nThe Kruskal\\-Wallis test does not assume normality in the data and is much less sensitive to outliers than the one\\-way ANOVA.\n** **\n** **The Kruskal test compares the Median value amoung the groups, instead of considering their\n mean value. \n> Hypothesis Statements:\n> H0:= The median value accross the different groups are same\n> Ha:= Atleast one of the median value is different from other groups\n\n## Kruskal \\- Wallis Test Assumptions:\n\n Before we can conduct a Kruskal \\- Wallis test, we need to make sure the \n following assumptions are met:\n> \n>    1. Ordinal or Continuos Response Variable \\- The numerical feature involved in the hypothesis should \n>     be a Ordinal or Continuous variable. Eg: The time taken to deliver package in different region. Here the time\n>     taken is a continuous variable.\n> 2\\. Independence \\- The observations in each group need to be independent of each other.\n> 3\\. Distribution have similar shapes \\- The distibution in each group need to have the same shape\n\n## Kruskal \\- Wallis Test code:\n\n```python\nfrom scipy import stats\n\n# We will need to pass all the individual group dataframes\np_value = stats.kruskal(sample1, sample2,...,sampleN, nan_policy='propogate')[1]\nif p_value > 0.05\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n\nWe will have to perform Post HOC analysis to figure out which groups differ from each other."
+          "data": "## Non \\- Parametric Test for ANOVA:\n\n We cannot perform the ANOVA test, when the data does not satisfy the Normality and the Equal Variance   amoung the group test. In this case we will be going with a Non \\- Parametric test.\n\n A Kruskal\\-Wallis test is used to determine whether or not there is a statistically significant difference  between the medians of three or more independent groups. This test is the nonparametric equivalent \n of the one\\-way ANOVA and is typically used when the normality assumption is violated.\n\n The Kruskal\\-Wallis test does not assume normality in the data and is much less sensitive to outliers \n than the one\\-way ANOVA.\n\n The Kruskal test compares the Median value amoung the groups, instead of considering their\n mean value. \n> Hypothesis Statements:\n> H0:= The median value accross the different groups are same\n> Ha:= Atleast one of the median value is different from other groups\n\n## Kruskal \\- Wallis Test Assumptions:\n\n Before we can conduct a Kruskal \\- Wallis test, we need to make sure the \n following assumptions are met:\n> \n>    1. Ordinal or Continuos Response Variable \\- The numerical feature involved in the hypothesis should be a Ordinal or Continuous variable. Eg: The time taken to deliver package in different region. Here the timetaken is a continuous variable.\n> 2\\. Independence \\- The observations in each group need to be independent of each other.\n> 3\\. Distribution have similar shapes \\- The distibution in each group need to have the same shape\n\n## Kruskal \\- Wallis Test code:\n\n```python\nfrom scipy import stats\n\n# We will need to pass all the individual group dataframes\np_value = stats.kruskal(sample1, sample2,...,sampleN, nan_policy='propogate')[1]\nif p_value > 0.05\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n\nWe will have to perform Post HOC analysis to figure out which groups differ from each other."
         }
       ]
     },
@@ -350,8 +389,25 @@
       ]
     },
     {
+      "key": "8fb7e16a-9930-4f62-af35-2190251832a8",
+      "parentKey": "1ae639a4-76e8-42e2-ac9f-0dc83446a970",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "Wilcoxon Test"
+        },
+        {
+          "type": "DESC",
+          "data": "When the dependent t\\-test fails to satisfy the assumption, we will use the Wilcoxon test from\n the Scipy.stats package.\n\n## Wilcoxon Test Assumptions:\n\n Before we can conduct a Wilcoxon test, we need to make sure the \n following assumptions are satisfied:\n> \n>    1. Ordinal or Continuos Response Variable \\- The numerical feature involved in the hypothesis should \n>     be a Ordinal or Continuous variable. Eg: The time taken to deliver package in different region. \n>     Here the time taken is a continuous variable.\n> 2\\. Independence \\- The test assumes independence, meaning that the paired observations are randomly and independently drawn.\n> 3\\. Distribution have similar shapes \\- The distibution in each group need to have the same shape\n>  Code snippet for MannWhitneyu test:\n\n##  Wilcoxon Hypothesis:\n\n In most cases, a Wilcoxon test is performed as a two\\-sided test. \n The null and alternative hypotheses  are written as:\n H0:= The median difference between the two groups are symmetric around 0\n Ha:= The median difference between the two groups are not symmetric around 0\n\n> Example:\n> A professor teaches batch1 students using a specific method and collects the test scores of the batch.\n> Then he changes the teaching method for batch2 students and collects the test score of the new batch.\n> Now the professor wants to check if the new teaching method was effective.\n> Ha:= The median test score difference between the two groups is not equal to 0 \\-\\> Alternative hypothesis\n> H0:= The median test score difference between the two groups is 0 \\-\\> Null hypothesis\n\n **Code snippet for the above example:**\n```python\nfrom scipy.stats import wilcoxon\n\np_value = wilcoxon(x=sample1data,y=sample2data,alternative=\"two-sided\")\nif p_value > 0.05:\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n"
+        }
+      ]
+    },
+    {
       "key": "14213589-8fe9-4e25-b7ff-2305e9a93318",
-      "parentKey": "5a04c9b0-6d2b-4c6b-830f-a4a370ea88b9",
+      "parentKey": "b222b8f4-ecba-46fa-91fc-1223a04160fe",
       "subKeys": [],
       "collapse": false,
       "style": null,
@@ -359,6 +415,10 @@
         {
           "type": "CONTENT",
           "data": "Dependent t-test"
+        },
+        {
+          "type": "DESC",
+          "data": "##  Dependent 2 \\- Sample t\\-test:\n\n Dependent 2 \\- Sample t\\-test is used when we want to analyse the relationship between two groups\n based on a numerical feature and the sample space in the two groups are dependent of each\n other or belong to the same sample space.\n\n> Example:\n> A professor teaches of students batch using a specific method and collects the test scores of the batch.\n> Then he uses a different teaching method for the same batch of students  and collects the test score of the batch again.\n> Now the professor wants to check if the new teaching method was effective.\n> Ha:= Average test scores is not equal between the two teaching methods \\-\\> Alternative hypothesis\n> H0:= Average test scores is equal between the two teaching methods \\-\\> Null hypothesis\n \n Here we will be using the Dependent 2 sample t\\-test, as there is only change in the teaching method\n but the observation includes the same set of students , and there are only two groups involved in the hypothesis.\n\n##  Python function to perform Independent 2\\- Sample t\\-test:\n\n We will be using the **ttest\\_ind **from the Scipy.Stats package Below is the code snippet \n for the above example question\n```python\nfrom scipy.stats import ttest_rel\n\np_value = ttest_rel(a=oldMethodScore,b=newMethodScore,\n           alternative='two-sided')[1]\n\nif p_value > 0.05:\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n"
         }
       ]
     },
@@ -381,7 +441,7 @@
     },
     {
       "key": "1459bf1d-2a6e-44ff-a486-950f36a902fd",
-      "parentKey": "5a04c9b0-6d2b-4c6b-830f-a4a370ea88b9",
+      "parentKey": "b222b8f4-ecba-46fa-91fc-1223a04160fe",
       "subKeys": [],
       "collapse": false,
       "style": null,
@@ -389,6 +449,10 @@
         {
           "type": "CONTENT",
           "data": "Independent t-test"
+        },
+        {
+          "type": "DESC",
+          "data": "##  Independent 2 \\- Sample t\\-test:\n\n Independent 2 \\- Sample t\\-test is used when we want to analyse the relationship between two groups\n based on a numerical feature and the sample space in the two groups are independent of each\n other\\.\n> Example:\n> A professor teaches batch1 students using a specific method and collects the test scores of the batch.\n> Then he changes the teaching method for batch2 students and collects the test score of the new batch.\n> Now the professor wants to check if the new teaching method was effective.\n> Ha:= Average test scores of batch2 is not equal to the average test scores of batch1 \\-\\> Alternative hypothesis\n> H0:= Average test scores of batch2 is equal to the average test scores of batch1 \\-\\> Null hypothesis\n \n Here we will be using the Independent 2 sample t\\-test, as the batch1 students are independent\n from the batch2 students, and there are only two groups involved in the hypothesis.\n\n##  Python function to perform Independent 2\\- Sample t\\-test:\n\n We will be using the **ttest\\_ind **from the Scipy.Stats package Below is the code snippet for the above\n example question\n```python\nfrom scipy.stats import ttest_ind\n\np_value = ttest_ind(a=batch2Score,b=batch1Score,alternative='two-sided')[1]\n\nif p_value > 0.05:\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n"
         }
       ]
     },
