@@ -1,50 +1,25 @@
-This is a online mindmap app using [blink-mind](https://github.com/awehook/blink-mind) library.
+# Visual mindmap for Hypothesis Testing
 
-### Online Demo
+A one stop repository to understand on when and how to
+perform each of the statistical testing methods.
 
-[Demo](https://awehook.github.io/react-mindmap/)
+The mind map covers the below concepts:
+1. Definition of Hypothesis Testing
+2. Type of Hypothesis
+3. Steps involved in performing Hypothesis testing
+4. Types of Testing:
+    1. Test of Mean:
+        1. 1 Sample t-test
+        2. 2 Sample t-test
+        3. ANOVA
+    2. Test of Proportions:
+        1. 1 Sample Proportion test
+        2. 2 Sample Proportion test
+        3. Chi - Square test
+        4. Chi - Square Contigency test
 
-[Example mind map](https://github.com/awehook/mindmap) You can download example mind maps from the repository: https://github.com/awehook/mindmap and use this app open the mind map file.
+The mind map also covers the assumptions required to be
+satisfied by the Parametric test and what are the 
+Non - Parametric alternative available for each of the parametric test.
 
-![image](https://github.com/awehook/images/raw/master/blink-mind/webpack-mindmap.png)
-
-
-### Features
-
-* Markdown editor for topic and topic notes.
-
-![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/markdown-editor1.png)
-
-* flowchart can be attached to topic.
-
-![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/context-menu-edit-topology.png)
-
-![image](https://github.com/awehook/images/raw/master/blink-mind/flowchart.png)
-
-* HotKey support.
-
-![image](https://github.com/awehook/images/raw/master/blink-mind/hotkey.png)
-
-* Reorganize the diagram by drag and drop.
-
-![image](https://github.com/awehook/images/raw/master/blink-mind/drag-and-drop.png)
-
-* Multiple theme. 
-
-![image](https://github.com/awehook/images/raw/master/blink-mind/blink-mind-theme.png)
-
-* Style customization.
-
-![image](https://github.com/awehook/images/raw/master/blink-mind/style-editor.png)
-
-### How to run
-```
-yarn install
-yarn start
-```
-
-Then open [localhost:3000](http://localhost:3000)
-
-![image](./screenshots/example-mindmap.jpg)
-
-
+This Hypothesis mind map project uses [Awehook - mind map](https://github.com/awehook/react-mindmap).
