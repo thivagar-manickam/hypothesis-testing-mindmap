@@ -1,7 +1,7 @@
 {
   "rootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
   "editorRootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
-  "focusKey": "bad7d35b-b741-482d-9597-16032dabcbcd",
+  "focusKey": "edd1862c-53fb-4fe8-806c-c62da4d15a55",
   "extData": {
     "TOPIC_REFERENCE": {
       "reference": {}
@@ -265,6 +265,10 @@
         {
           "type": "CONTENT",
           "data": "2 Sample Proportion test"
+        },
+        {
+          "type": "DESC",
+          "data": "##  2 Sample Proportion test:\n\n The 2 Sample Proportion test is used when we want to verify if the proportion of two groups is similar\n to the proportion made in the claim\n \n In the 2 Sample Proportion test there are two categorical feature involved and there are exactly two\n levels within each group.\n> Analysing the proportion of male and female voting for Joe Biden and Trump in the US presidential\n> election\\. Here the analysis is done on the gender and the election participants. Both are\n> categorical data and both have only two levels in both of them\n\n##  Python function to perform 2 Sample Proportion test\n\n Both 1 Sample Proportion test and 2 Sample Proportion test use the same python function with slight \n difference in the way we pass the params:\n> \n>    1. In 1 Sample Proportion test we pass a single integer value for the count and nobs param, where as in the \n>     2 Sample Proportion test we will pass a list for the count and nobs param\n> 2\\. In 1 Sample Proportion test we will pass the claim value for the value param, but in 2 Sample proportion\n>     we will not be passing the value param or we can pass the value as None.\n\n We will be using the **proportions\\_ztest** from the **statsmodels\\.stats.proportion** package\\.\n\n> Example:\n> The government officials want to check if the impact of covid equal between the Rural and Urban area\n> Below is the sample collected:\n>                \\|  Rural  \\|  Urban  \\|\n> Negative \\|   867    \\|    500   \\|\n> Positive   \\|   490    \\|    550   \\|\n> Total       \\|   1357  \\|    1050 \\|\n\n For the above example, below is the hypothesis statement\n> Ha:= covid spread in Rural area is not equal to the spread in Urban area\n> H0:= covid spread in Rural area is equal to the spread in Urban area\n \n Code snippet for performing the 2 Sample Proportion test\n```python\nfrom statsmodels.stats.proportion import proportions_ztest\n\n# count => a list including the count of Positive patients in Rural and Urban\n# nobs => a list including total count of people in Rural and Urban\np_value = proportions_ztest(count=[490, 550], nobs=[1357, 1050],alternative='two-sided')[1]\nif p_value > 0.05:\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n\n Based on the claim statment made, the 2 Sample proportion test can be either One tailed or Two tailed test\n> \n>    * People affected by covid in Urban is greater than that of Rural \\-\\> 1 tail 2 Sample proportion test\n>    * Poeple affecteb by covid is equal in both Urban and Rural \\-\\> 2 tail 2 Sample proportion test\n\n We can tweak the alternative param in the proportion\\_ztest, to make it as a one tailed test. \n The alternative param can take either of the values 'two\\-sided', 'smaller', 'larger'\n By default the p\\_value given by the proportions\\_ztest is for two tailed test."
         }
       ]
     },
