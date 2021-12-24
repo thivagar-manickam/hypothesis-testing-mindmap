@@ -11,7 +11,7 @@ export function generateSimpleModel() {
   return Model.create({
     "rootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
     "editorRootTopicKey": "a607e564-8513-4581-80a5-11153d20cd9b",
-    "focusKey": "1ae639a4-76e8-42e2-ac9f-0dc83446a970",
+    "focusKey": "0d803305-a283-47bf-8528-3b8bd13fa210",
     "extData": {
       "TOPIC_REFERENCE": {
         "reference": {}
@@ -110,7 +110,7 @@ export function generateSimpleModel() {
           },
           {
             "type": "DESC",
-            "data": "Test of Proportions is used whenever there is a **categorical feature** and **no numerical feature** involved in\n the hypothesis creation \n\n The Test of Proportions is used when we want to verify if the mean of the groups in a feature is same or different\n\n There are 4 tests associated with Test of Proportions:\n1. One Sample proportion test\n1. Two Sample proportion test\n1. Chi\\-Square test\n1. Chi\\-Square Contigency test\n\n"
+            "data": "Test of Proportions is used whenever there is a **categorical feature** and **no numerical feature** involved in\n the hypothesis creation \n\n The Test of Proportions is used when we want to verify if there exist a equal proportion or not \n within a categorical feature or based on a categorical feature\n\n There are 4 tests associated with Test of Proportions:\n1. One Sample proportion test\n1. Two Sample proportion test\n1. Chi\\-Square test\n1. Chi\\-Square Contigency test\n\n"
           }
         ]
       },
@@ -288,6 +288,10 @@ export function generateSimpleModel() {
           {
             "type": "CONTENT",
             "data": "1 Sample Proportion test"
+          },
+          {
+            "type": "DESC",
+            "data": "##  1 Sample Proportion test:\n\n The 1 Sample Proportion test is used when we want to verify if the proportion of a group within a\n categorical feature is similar to the claim made.\n \n In the 1 Sample Proportion test only one categorical data is involved and there are exactly two\n groups within the group.\n> Gender is a categorical feature with only two levels Male or Female\n\n##  Python function to perform 1 Sample Proportion test\n\n We will be using the **proportions\\_ztest** from the **statsmodels\\.stats.proportion** package\\.\n> Example:\n> Health officials of India is expecting Covid\\-19 is affecting more men than women, they are expecting 65% of affected case \n> in India are Men. To verify this hypothesis, random samples \\(n=1500\\) across India were collected,the samples are as follows:\n> Men:900, Women:600\n\n For the above example, below is the hypothesis statement\n> We will be using 1 sample proportion test, as the hypothesis revolves around gender alone and gender has only two levels\n> Ha:= The proportion of Male affected by covid is not equal to 65%\n> H0:= The proportion of Male affected by covid is equal to 65% \n \n Code snippet for performing the 1 Sample Proportion test\n```python\nfrom statsmodels.stats.proportion import proportions_ztest\n\n# count => Total count of male in the given data set\n# nobs => Total count of the sample space\n# value => The claim percentage in decimal value\np_value = proportions_ztest(count=900, nobs=1500, value=0.65,alternative='two-sided')[1]\nif p_value > 0.05:\n    print(p_value, \"We fail to reject the Null Hypothesis\")\nelse:\n    print(p_value, \"We will reject the Null Hypothesis\")\n\n```\n\n Based on the claim statment made, the 1 Sample proportion test can be either One tailed or Two tailed test\n> \n>    * More than 65% of covid patients are male \\-\\> 1 tail 1 Sample proportion test\n>    * 65% of covid patients are male \\-\\> 2 tail 1 Sample proportion test\n\n We can tweak the alternative param in the proportion\\_ztest, to make it as a one tailed test. \n The alternative param can take either of the values 'two\\-sided', 'smaller', 'larger'\n By default the p\\_value given by the proportions\\_ztest is for two tailed test."
           }
         ]
       },
@@ -445,7 +449,7 @@ export function generateSimpleModel() {
           },
           {
             "type": "DESC",
-            "data": "# Type of Hypothesis:\n\n\n## Alternative Hypothesis:\n\n An alternative hypothesis usually refers to the claim made by the organization. \n The analysts generally creates their null hypothesis based on the alternative hypothesis and try to see if the   claim is true or false.\n\n## Null Hypothesis:\n\n A null hypothesis is a statement formulated by the analysts in order to verify if there exists a relationship between the variables in the given data.\n\n The null hypothesis statement is usually the opposite of the **Alternative hypothesis. **The main purpose of  the research is to either reject or accept \\(fail to reject\\) the Null hypothesis.\n\n```none\n- Reject the Null hypothesis: This refers to the scenario where we \nwill accept the Alternative hypothesis ie, there exist a \nrelationship between the variables in the data or the claim made \nis true\n\n- Fail to reject the Null hypothesis: This refers to the scenario \nwhere we state that there does not exist a relationship between \nthe variables in the data or the claim made is false\n\n```\n\n> Example:\n> \n> Ha:= Drinking tea or coffee before classes increases student's performances\n> H0:= There is no significant difference in student's performances if they drink tea of coffee before classes\n"
+            "data": "# Type of Hypothesis:\n\n\n## Alternative Hypothesis:\n\n An alternative hypothesis usually refers to the claim made by the organization. \n The analysts generally creates their null hypothesis based on the alternative hypothesis and try to see if the   claim is true or false.\n\n Alternative Hypothesis is also referred to as the effect statement. \n In a one tail scenario, the Alternative Hypothesis will mostly take the statement of the claim made.\n In a two tail scenario, the Alternative Hypothesis will take the not equal to condition.\n\n## Null Hypothesis:\n\n A null hypothesis is a statement formulated by the analysts in order to verify if there exists a relationship between the variables in the given data.\n\n The null hypothesis statement is usually the opposite of the **Alternative hypothesis. **The main purpose of  the research is to either reject or accept \\(fail to reject\\) the Null hypothesis.\n \n Null Hypothesis is also referred to as the effect statement. \n In a one tail scenario, the Null Hypothesis will mostly take the statement opposite of the claim made.\n In a two tail scenario, the Null Hypothesis will take the equal to condition.\n\n```none\n- Reject the Null hypothesis: This refers to the scenario where we \nwill accept the Alternative hypothesis ie, there exist a \nrelationship between the variables in the data or the claim made \nis true\n\n- Fail to reject the Null hypothesis: This refers to the scenario \nwhere we state that there does not exist a relationship between \nthe variables in the data or the claim made is false\n\n```\n\n> Example:\n> \n> Ha:= Drinking tea or coffee before classes increases student's performances\n> H0:= There is no significant difference in student's performances if they drink tea of coffee before classes\n"
           }
         ]
       },
