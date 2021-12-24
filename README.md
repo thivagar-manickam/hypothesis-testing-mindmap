@@ -21,3 +21,5 @@ The mind map covers the below concepts:
 The mind map also covers the assumptions required to be
 satisfied by the Parametric test and what are the 
 Non - Parametric alternative available for each of the parametric test.
+
+This Hypothesis mind map project uses [Awehook - mind map](https://github.com/awehook/react-mindmap).
