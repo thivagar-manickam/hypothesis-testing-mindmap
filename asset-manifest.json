@@ -1,8 +1,8 @@
 {
   "files": {
     "chunk-blinkmind.css": "/hypothesis-testing-mindmap/static/css/chunk-blinkmind.b8d2d07a.chunk.css",
-    "chunk-blinkmind.js": "/hypothesis-testing-mindmap/static/js/chunk-blinkmind.c2844333.chunk.js",
-    "chunk-blinkmind.js.map": "/hypothesis-testing-mindmap/static/js/chunk-blinkmind.c2844333.chunk.js.map",
+    "chunk-blinkmind.js": "/hypothesis-testing-mindmap/static/js/chunk-blinkmind.d868303c.chunk.js",
+    "chunk-blinkmind.js.map": "/hypothesis-testing-mindmap/static/js/chunk-blinkmind.d868303c.chunk.js.map",
     "chunk-libs.css": "/hypothesis-testing-mindmap/static/css/chunk-libs.add42989.chunk.css",
     "chunk-libs.js": "/hypothesis-testing-mindmap/static/js/chunk-libs.244b21b8.chunk.js",
     "chunk-libs.js.map": "/hypothesis-testing-mindmap/static/js/chunk-libs.244b21b8.chunk.js.map",
@@ -13,7 +13,7 @@
     "runtime~main.js": "/hypothesis-testing-mindmap/static/js/runtime~main.2d9c37a8.js",
     "runtime~main.js.map": "/hypothesis-testing-mindmap/static/js/runtime~main.2d9c37a8.js.map",
     "index.html": "/hypothesis-testing-mindmap/index.html",
-    "precache-manifest.89ca2a1d13166b67e885dd97b03aa226.js": "/hypothesis-testing-mindmap/precache-manifest.89ca2a1d13166b67e885dd97b03aa226.js",
+    "precache-manifest.1991436803f153063dc2fd2ccdbd1cb7.js": "/hypothesis-testing-mindmap/precache-manifest.1991436803f153063dc2fd2ccdbd1cb7.js",
     "service-worker.js": "/hypothesis-testing-mindmap/service-worker.js",
     "static/css/chunk-blinkmind.b8d2d07a.chunk.css.map": "/hypothesis-testing-mindmap/static/css/chunk-blinkmind.b8d2d07a.chunk.css.map",
     "static/css/chunk-libs.add42989.chunk.css.map": "/hypothesis-testing-mindmap/static/css/chunk-libs.add42989.chunk.css.map",
