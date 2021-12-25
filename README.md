@@ -23,3 +23,7 @@ satisfied by the Parametric test and what are the
 Non - Parametric alternative available for each of the parametric test.
 
 This Hypothesis mind map project uses [Awehook - mind map](https://github.com/awehook/react-mindmap).
+
+Mindmap Snippet:
+
+![Mindmap Snippet](https://github.com/thivagar-manickam/hypothesis-testing-mindmap/blob/main/public/hypothesis-mindmap-overview.png)
