@@ -1,5 +1,7 @@
 # Visual mindmap for Hypothesis Testing
 
+[Mind Map site URL](https://thivagar-manickam.github.io/hypothesis-testing-mindmap/)
+
 A one stop repository to understand on when and how to
 perform each of the statistical testing methods.
 
